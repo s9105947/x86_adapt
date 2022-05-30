@@ -1,0 +1,12 @@
+//#description
+Meta-MSR IA32_PERF_CAPABILITIES reports whether Perf metrics are available
+//#device
+MSR
+//#register_index
+0x345
+//#bit_mask
+0x0000000000008000
+//#restricted_settings
+readonly
+//#processor_groups
+intel
