@@ -1,0 +1,10 @@
+//#description
+Enable Recording of top-down performance metrics into MSR_PERF_METRICS. Has additional requirements, please refer to manual Volume 3B 19.3.9.3.
+//#device
+MSR
+//#register_index
+0x38f
+//#bit_mask
+(0x1000000000000)
+//#processor_groups
+alderlake

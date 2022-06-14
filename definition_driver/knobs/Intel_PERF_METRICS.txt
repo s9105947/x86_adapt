@@ -6,7 +6,5 @@ MSR
 0x329
 //#bit_mask
 0xFFFFFFFFFFFFFFFFULL
-//#restricted_settings
-readonly
 //#processor_groups
 alderlake

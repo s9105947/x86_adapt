@@ -1,0 +1,10 @@
+//#description
+Enable Fixed Counter 2 to count while CPL = 0, knob is inteded to enable top-down-analysis.
+//#device
+MSR
+//#register_index
+0x38d
+//#bit_mask
+(0x1000)
+//#processor_groups
+alderlake
