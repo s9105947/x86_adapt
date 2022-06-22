@@ -424,9 +424,25 @@ int x86_adapt_lookup_ci_name(x86_adapt_device_type device_type, const char * nam
     int number_cis = x86_adapt_get_number_cis(device_type);
     if (number_cis<0)
         return number_cis;
+
+    // pre-compute (and cache) the max size of a knob name
+    static size_t max_name_size = 0;
+    if (0 == max_name_size) {
+        for (i=0;i<number_cis;i++) {
+            size_t name_size = strlen(config_items[device_type][i].name);
+            if (name_size > max_name_size) {
+                max_name_size = name_size;
+            }
+        }
+    }
+
+    // reject if requested name is longer than the longest name
+    if (strnlen(name, max_name_size + 1) > max_name_size) {
+        return -ENXIO;
+    }
+
     for (i=0;i<number_cis;i++) {
-        size_t size = strlen(config_items[device_type][i].name);
-        if(!strncmp(config_items[device_type][i].name, name, size))
+        if(!strncmp(config_items[device_type][i].name, name, max_name_size))
             return i;
     }
     return -ENXIO;
