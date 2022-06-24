@@ -1,0 +1,10 @@
+//#description
+Fixed-Function Performance Counter 3 (R/W): Counts data for Performance Analysis (TMAM)
+//#device
+MSR
+//#register_index
+0x30c
+//#bit_mask
+(0xFFFFFFFFFFFFFFFFULL)
+//#processor_groups
+alderlake

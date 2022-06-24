@@ -1,0 +1,10 @@
+//#description
+MSR 0x390 (bit 48): reset performance metrics for top-down analysis overflow bit
+//#device
+MSR
+//#register_index
+0x390
+//#bit_mask
+0x1000000000000ULL
+//#processor_groups
+alderlake
